@@ -1,0 +1,11 @@
+package pageLocators;
+
+import org.openqa.selenium.By;
+
+public class OpenAccountLocators {
+    public static final By customerNameElement = By.cssSelector("#userSelect");
+    public static final By currentElement = By.cssSelector("#currency");
+    public static final By processButton = By.cssSelector("button[type='submit']");
+
+
+}
