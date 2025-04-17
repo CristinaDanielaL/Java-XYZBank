@@ -7,6 +7,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 
 import java.time.Duration;
 
@@ -51,7 +52,16 @@ public class ElementHelper {
         Select elementSelect = new Select(driver.findElement(locator));
         elementSelect.selectByVisibleText(value);
     }
-
+    public void validateTextLocator (By locator, String value){
+        waitForElementVisible(locator);
+        String text = driver.findElement(locator).getText();
+        Assert.assertEquals(text, value);
+    }
+      public void validateContainTextLocator(By locator, String value){
+          waitForElementVisible(locator);
+          String text = driver.findElement(locator).getText();
+          Assert.assertTrue(text.contains(value));
+    }
 
 }
 

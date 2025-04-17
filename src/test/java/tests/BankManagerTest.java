@@ -2,10 +2,7 @@ package tests;
 
 import org.testng.annotations.Test;
 import pageLocators.AddCustomersLocators;
-import pages.AddCustomerPage;
-import pages.BankManagerPage;
-import pages.IndexPage;
-import pages.OpenAccountPage;
+import pages.*;
 import sharedData.SharedData;
 
 public class BankManagerTest extends SharedData {
@@ -40,7 +37,13 @@ public class BankManagerTest extends SharedData {
         openAccountPage.selectCurrency(currencyValue);
         openAccountPage.clickProcess();
 
+        bankManagerPage.clickCustomersElement();
+        CustomersPage customersPage = new CustomersPage(driver);
+        customersPage.searchCustomers(lastNameValue);
 
+        customersPage.validateCustomer(firstNameValue, lastNameValue, postCodeValue);
+
+        customersPage.deleteCustomer();
     }
 
 }
