@@ -1,11 +1,10 @@
 package tests;
 
 import org.testng.annotations.Test;
-import pageLocators.AddCustomersLocators;
 import pages.*;
 import sharedData.SharedData;
 
-public class BankManagerTest extends SharedData {
+public class CreateCustomerWithAccountTest extends SharedData {
 
     @Test
             public void testMethod () {
